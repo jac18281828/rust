@@ -54,6 +54,7 @@ RUN echo '%jac ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 ## Rust 
 COPY --chown=jac:jac --from=builder /home/jac/.cargo /home/jac/.cargo
+COPY --chown=jac:jac --from=builder /home/jac/.rustup /home/jac/.rustup
 
 ENV PATH=/home/jac/.cargo/bin:$PATH
 
