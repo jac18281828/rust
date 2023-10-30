@@ -1,3 +1,7 @@
+# 0.2.1 (2023-10-30)
+
+* update rust
+
 # 0.2.0 (2023-08-11)
 
 * copy rustup as well as cargo
