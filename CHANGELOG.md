@@ -1,3 +1,7 @@
+# 0.2.2 (2023-11-08)
+
+* cleanup Dockerfile
+
 # 0.2.1 (2023-10-30)
 
 * update rust
