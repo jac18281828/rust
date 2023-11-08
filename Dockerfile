@@ -1,8 +1,3 @@
-FROM debian:stable-slim as go-builder
-# defined from build kit
-# DOCKER_BUILDKIT=1 docker build . -t ...
-ARG TARGETARCH
-
 FROM debian:stable-slim as builder
 # defined from build kit
 # DOCKER_BUILDKIT=1 docker build . -t ...
@@ -21,7 +16,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 RUN useradd --create-home -s /bin/bash jac
 RUN usermod -a -G sudo jac
-RUN echo '%jac ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 WORKDIR /rustup
 ## Rust
