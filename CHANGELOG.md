@@ -1,3 +1,8 @@
+# 0.2.3 (2023-11-10)
+
+* clippy 
+* fmt
+
 # 0.2.2 (2023-11-08)
 
 * cleanup Dockerfile

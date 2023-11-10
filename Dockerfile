@@ -52,6 +52,11 @@ COPY --chown=jac:jac --from=builder /home/jac/.cargo /home/jac/.cargo
 COPY --chown=jac:jac --from=builder /home/jac/.rustup /home/jac/.rustup
 
 ENV PATH=/home/jac/.cargo/bin:$PATH
+ENV USER=jac
+USER jac
+RUN rustup toolchain install stable 
+RUN rustup component add rustfmt
+RUN rustup component add clippy
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.name="rustdev" \
