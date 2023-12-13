@@ -38,6 +38,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     ca-certificates apt-transport-https \
     sudo ripgrep procps build-essential \
     python3 python3-pip python3-dev \
+    openssl libssl-dev \
     git valgrind curl && \
   apt clean && \
   rm -rf /var/lib/apt/lists/*
