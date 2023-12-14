@@ -1,3 +1,8 @@
+# 1.74.1_2 (2023-12-14)
+
+* remove openssl
+* add pkg-config
+
 # 1.74.1_1 (2023-12-13)
 
 * openssl
