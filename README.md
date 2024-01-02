@@ -23,7 +23,7 @@ To use this development container in Visual Studio Code, specify the `Dockerfile
 ### Example Dockerfile:
 
 ```
-FROM jac18281828/rustdev:latest as builder
+FROM jac18281828/rustdev:latest
 ```
 
 ### Architecture support
