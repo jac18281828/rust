@@ -3,6 +3,8 @@ FROM debian:stable-slim as builder
 # DOCKER_BUILDKIT=1 docker build . -t ...
 ARG TARGETARCH
 
+SHELL ["/bin/bash", "-c"]
+
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt update && \
     apt install -y -q --no-install-recommends \
@@ -18,14 +20,10 @@ RUN useradd --create-home -s /bin/bash jac
 RUN usermod -a -G sudo jac
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-WORKDIR /rustup
-## Rust
-ADD https://sh.rustup.rs /rustup/rustup.sh
-RUN chmod 755 /rustup/rustup.sh
-
 ENV USER=jac
 USER jac
-RUN /rustup/rustup.sh -y --default-toolchain stable
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable -y
 
 ENV PATH=$PATH:~jac/.cargo/bin
 
@@ -56,6 +54,7 @@ COPY --chown=jac:jac --from=builder /home/jac/.rustup /home/jac/.rustup
 ENV PATH=/home/jac/.cargo/bin:$PATH
 ENV USER=jac
 USER jac
+
 RUN rustup toolchain install stable 
 RUN rustup component add rustfmt
 RUN rustup component add clippy
