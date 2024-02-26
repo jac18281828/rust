@@ -83,6 +83,7 @@ COPY --chown=${USER}:${USER} --from=go-builder /usr/local/go/bin/yamlfmt /usr/lo
 ENV PATH=${PATH}:/home/rust/.cargo/bin:/usr/local/go/bin
 USER rust
 
+RUN yamlfmt -lint .github/workflows/*.yml
 
 RUN rustup toolchain install stable 
 RUN rustup component add rustfmt
