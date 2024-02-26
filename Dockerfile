@@ -80,7 +80,7 @@ ENV USER=rust
 COPY --chown=${USER}:${USER} --from=builder /home/rust/.cargo /home/rust/.cargo
 COPY --chown=${USER}:${USER} --from=builder /home/rust/.rustup /home/rust/.rustup
 COPY --chown=${USER}:${USER} --from=go-builder /usr/local/go/bin/yamlfmt /usr/local/go/bin/yamlfmt
-ENV PATH=/home/rust/.cargo/bin:$PATH
+ENV PATH=${PATH}:/home/rust/.cargo/bin:/usr/local/go/bin
 USER rust
 
 
@@ -91,11 +91,11 @@ RUN rustup component add rust-analyzer
 RUN cargo --version
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
-    org.label-schema.name="rustdev" \
+    org.label-schema.name="rust" \
     org.label-schema.description="Rust Development Container" \
-    org.label-schema.url="https://github.com/jac18281828/rustdev" \
+    org.label-schema.url="https://github.com/jac18281828/rust" \
     org.label-schema.vcs-ref=$VCS_REF \
-    org.label-schema.vcs-url="git@github.com:jac18281828/rustdev.git" \
+    org.label-schema.vcs-url="git@github.com:jac18281828/rust.git" \
     org.label-schema.vendor="jac18281828" \
     org.label-schema.version=$VERSION \
     org.label-schema.schema-version="1.0" \

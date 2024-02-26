@@ -1,5 +1,3 @@
-# rustdev
-
 ### Rust Development Container for Docker and VS Code
 
 ![Rust](https://www.rust-lang.org/static/images/rust-logo-blk.svg)
@@ -23,12 +21,12 @@ To use this development container in Visual Studio Code, specify the `Dockerfile
 ### Example Dockerfile:
 
 ```
-FROM jac18281828/rustdev:latest
+FROM jac18281828/rust:latest
 ```
 
 ### Architecture support
 * linux/amd64 
 * linux/arm64
 
-Also available from [GitHub GHCR](https://github.com/jac18281828/rustdev/pkgs/container/rustdev)
+Also available from [GitHub GHCR](https://github.com/jac18281828/rust/pkgs/container/rustdev)
 
