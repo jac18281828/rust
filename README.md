@@ -28,5 +28,5 @@ FROM jac18281828/rust:latest
 * linux/amd64 
 * linux/arm64
 
-Also available from [GitHub GHCR](https://github.com/jac18281828/rust/pkgs/container/rustdev)
+Also available from [GitHub GHCR](https://github.com/jac18281828/rust/pkgs/container/rust)
 
