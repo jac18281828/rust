@@ -63,7 +63,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
   apt install -y -q --no-install-recommends \
     ca-certificates apt-transport-https \
     sudo ripgrep procps build-essential \
-    python3 python3-pip python3-dev \
+    python3 python3-pip python3-dev clang \
     git valgrind curl \
     pkg-config openssl libssl-dev && \
   apt clean && \
