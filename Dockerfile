@@ -15,10 +15,11 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 ## Go Lang
 ARG GO_VERSION=1.23.2
-ADD https://go.dev/dl/go${GO_VERSION}.linux-$TARGETARCH.tar.gz /goinstall/go${GO_VERSION}.linux-$TARGETARCH.tar.gz
+ADD https://go.dev/dl/go${GO_VERSION}.linux-$TARGETARCH.tar.gz /go/go${GO_VERSION}.linux-$TARGETARCH.tar.gz
 RUN echo 'SHA256 of this go source package...'
-RUN cat /goinstall/go${GO_VERSION}.linux-$TARGETARCH.tar.gz | sha256sum 
-RUN tar -C /usr/local -xzf /goinstall/go${GO_VERSION}.linux-$TARGETARCH.tar.gz
+RUN cat /go/go${GO_VERSION}.linux-$TARGETARCH.tar.gz | sha256sum 
+RUN tar -C /usr/local -xzf /go/go${GO_VERSION}.linux-$TARGETARCH.tar.gz
+
 WORKDIR /yamlfmt
 ENV GOBIN=/usr/local/go/bin
 ENV PATH=$PATH:${GOBIN}
