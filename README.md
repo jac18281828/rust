@@ -22,6 +22,10 @@ To use this development container in Visual Studio Code, specify the `Dockerfile
 
 ```
 FROM jac18281828/rust:latest
+
+ENV USER=rust
+ENV PATH=${PATH}:/home/rust/.cargo/bin:/usr/local/go/bin
+USER rust
 ```
 
 ### Architecture support
