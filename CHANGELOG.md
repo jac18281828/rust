@@ -1,3 +1,8 @@
+# 1.81.1_3 (2024-10-11)
+
+* reduce container size
+* rewrite container
+
 # 1.81.0 (2024-09-19)
 
 * rust 1.18.0
