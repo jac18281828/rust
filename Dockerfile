@@ -33,7 +33,7 @@ RUN apt-get update && \
 
 RUN echo "building platform $(uname -m)"
 
-RUN useradd --create-home -shell /bin/bash rust
+RUN useradd --create-home --shell /bin/bash rust
 RUN usermod -a -G sudo rust
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
