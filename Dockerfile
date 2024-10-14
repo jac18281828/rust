@@ -1,5 +1,5 @@
 # Stage 1: Build yamlfmt
-FROM golang:1-bookworm AS go-builder
+FROM golang:1 AS go-builder
 # defined from build kit
 # DOCKER_BUILDKIT=1 docker build . -t ...
 ARG TARGETARCH
