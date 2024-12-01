@@ -39,12 +39,12 @@ RUN apt-get update && \
 RUN echo "building platform $(uname -m)"
 
 # create rust user
-RUN useradd --create-home --shell /bin/bash rust
-RUN usermod -a -G sudo rust
+ENV USER=rust
+RUN useradd --create-home --shell /bin/bash ${USER}
+RUN usermod -a -G sudo ${USER}
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 ## Rust
-ENV USER=rust
 COPY --chown=${USER}:${USER} --from=go-builder /go/bin/yamlfmt /go/bin/yamlfmt
 USER rust
 ENV PATH=${PATH}:/go/bin
