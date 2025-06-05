@@ -6,7 +6,7 @@ ARG TARGETARCH
 
 # Install yamlfmt
 WORKDIR /yamlfmt
-RUN go install github.com/google/yamlfmt/cmd/yamlfmt@latest && \
+RUN go install github.com/google/yamlfmt/cmd/yamlfmt@v0.16.0 && \
     strip $(which yamlfmt) && \
     yamlfmt --version
 
