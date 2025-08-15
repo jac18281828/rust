@@ -18,21 +18,21 @@ ARG TARGETARCH
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+    binutils \
     build-essential \
     ca-certificates \
-    ripgrep \
+    clang \
+    curl \
+    git \
+    gnupg2 \
+    libssl-dev \
+    pkg-config \
+    protobuf-c-compiler \
     python3 \
     python3-pip \
-    clang \
-    git \
-    valgrind \
-    curl \
-    protobuf-c-compiler \
-    pkg-config \
-    libssl-dev \
-    gnupg2 \
-    binutils \
-    sudo && \
+    ripgrep \
+    sudo \
+    && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
