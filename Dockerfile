@@ -30,6 +30,7 @@ RUN apt-get update && \
     protobuf-c-compiler \
     python3 \
     python3-pip \
+    python3-venv \
     ripgrep \
     sudo \
     && \
